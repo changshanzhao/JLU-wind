@@ -1,0 +1,71 @@
+Overriding model.yaml nc=80 with nc=5
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    115712  models.common.C3                        [128, 128, 2]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1   1182720  models.common.C3                        [512, 512, 1]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     43152  models.yolo.Detect                      [5, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512], 5, 2, 3]
+E:\anaconda\envs\YOLOwind\lib\site-packages\torch\functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:3484.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Model Summary: 270 layers, 7049296 parameters, 7049296 gradients, 16.0 GFLOPs
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m Adam with parameter groups 57 weight, 60 weight (no decay), 60 bias
+[34m[1mtrain: [39m[22mScanning 'E:\YOLOwind\wind-data\labels\train.cache' images and labels... 4648 found, 0 missing, 0 empty, 0 corrupted: 100%|██████████| 4648/4648 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning 'E:\YOLOwind\wind-data\labels\val.cache' images and labels... 1162 found, 0 missing, 0 empty, 0 corrupted: 100%|██████████| 1162/1162 [00:00<?, ?it/s]
+Image sizes 640 train, 640 val
+Using 1 dataloader workers
+Logging results to [1mruns\train\exp3
+Starting training for 500 epochs...
+     Epoch   gpu_mem       box       pts       obj       cls     total    labels  img_size
+  0%|          | 0/581 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "E:\YOLOwind\train.py", line 676, in <module>
+    main(opt)
+  File "E:\YOLOwind\train.py", line 573, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "E:\YOLOwind\train.py", line 318, in train
+    for i, (imgs, targets, paths, _) in pbar:  # batch -------------------------------------------------------------
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\tqdm\std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "E:\YOLOwind\utils\datasets.py", line 141, in __iter__
+    yield next(self.iterator)
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\_utils.py", line 644, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\_utils\worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "E:\anaconda\envs\YOLOwind\lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "E:\YOLOwind\utils\datasets.py", line 703, in __getitem__
+    labels_out[:, 1:] = torch.from_numpy(labels)
+RuntimeError: The expanded size of the tensor (9) must match the existing size (15) at non-singleton dimension 1.  Target sizes: [6, 9].  Tensor sizes: [6, 15]
+[34m[1mautoanchor: [39m[22mAnalyzing anchors... anchors/target = 4.62, Best Possible Recall (BPR) = 1.0000

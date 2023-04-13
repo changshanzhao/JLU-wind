@@ -1,0 +1,10 @@
+    path: E:/YOLOwind/wind-data
+    train: images/train    #图片路径
+    val: images/val      #图片路径
+    nc: 6                                                            #class种类数
+    np: 4                                                             #关键点个数
+    colors: 2                                                         #颜色种类数
+    tags: 3                                                           #标签种类数
+    names: ['BR', 'BU', 'BA',
+            'RR', 'RU', 'RA',]  #种类命名
+    date: '2023/4/11'                                                 #最后修改日期

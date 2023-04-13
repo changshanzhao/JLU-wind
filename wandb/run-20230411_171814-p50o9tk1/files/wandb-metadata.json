@@ -1,0 +1,63 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-04-11T09:18:16.727538",
+    "startedAt": "2023-04-11T09:18:14.798809",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--cfg",
+        "models/yolov5s.yaml",
+        "--data",
+        "E:/YOLOwind/wind-data/wind.yaml",
+        "--hyp",
+        "E:/YOLOwind/data/hyps/RM.wind.yaml",
+        "--epochs",
+        "500",
+        "--batch-size",
+        "8",
+        "--img-size",
+        "640",
+        "--noval",
+        "--adam",
+        "--workers",
+        "1",
+        "--negative-path",
+        "D:/300-600/images/train"
+    ],
+    "state": "running",
+    "program": "E:\\YOLOwind\\train.py",
+    "codePath": "train.py",
+    "host": "DESKTOP-LP6CIGL",
+    "username": "Lenovo",
+    "executable": "E:\\anaconda\\envs\\YOLOwind\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1609.0,
+        "min": 0.0,
+        "max": 2112.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1609.0,
+            "min": 0.0,
+            "max": 2112.0
+        }
+    ],
+    "disk": {
+        "total": 179.8857421875,
+        "used": 155.70759963989258
+    },
+    "gpu": "NVIDIA GeForce MX350",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX350",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 15.834033966064453
+    }
+}

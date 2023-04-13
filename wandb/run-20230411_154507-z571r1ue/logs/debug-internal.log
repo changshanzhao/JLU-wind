@@ -1,0 +1,157 @@
+2023-04-11 15:45:07,384 INFO    StreamThr :3044 [internal.py:wandb_internal():86] W&B internal server running at pid: 3044, started at: 2023-04-11 15:45:07.383667
+2023-04-11 15:45:07,385 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status
+2023-04-11 15:45:07,413 INFO    WriterThread:3044 [datastore.py:open_for_write():85] open: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\run-z571r1ue.wandb
+2023-04-11 15:45:07,414 DEBUG   SenderThread:3044 [sender.py:send():375] send: header
+2023-04-11 15:45:07,415 DEBUG   SenderThread:3044 [sender.py:send():375] send: run
+2023-04-11 15:45:07,426 INFO    SenderThread:3044 [sender.py:_maybe_setup_resume():761] checking resume status for None/YOLOv5/z571r1ue
+2023-04-11 15:45:08,419 INFO    SenderThread:3044 [dir_watcher.py:__init__():219] watching files in: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files
+2023-04-11 15:45:08,419 INFO    SenderThread:3044 [sender.py:_start_run_threads():1124] run started: z571r1ue with start time 1681199107.386629
+2023-04-11 15:45:08,436 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: summary_record
+2023-04-11 15:45:08,437 INFO    SenderThread:3044 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-11 15:45:08,443 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: check_version
+2023-04-11 15:45:08,444 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: check_version
+2023-04-11 15:45:08,993 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: run_start
+2023-04-11 15:45:09,310 DEBUG   HandlerThread:3044 [system_info.py:__init__():31] System info init
+2023-04-11 15:45:09,310 DEBUG   HandlerThread:3044 [system_info.py:__init__():46] System info init done
+2023-04-11 15:45:09,310 INFO    HandlerThread:3044 [system_monitor.py:start():181] Starting system monitor
+2023-04-11 15:45:09,311 INFO    SystemMonitor:3044 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-11 15:45:09,311 INFO    HandlerThread:3044 [system_monitor.py:probe():201] Collecting system info
+2023-04-11 15:45:09,314 INFO    SystemMonitor:3044 [interfaces.py:start():190] Started cpu monitoring
+2023-04-11 15:45:09,315 INFO    SystemMonitor:3044 [interfaces.py:start():190] Started disk monitoring
+2023-04-11 15:45:09,315 INFO    SystemMonitor:3044 [interfaces.py:start():190] Started gpu monitoring
+2023-04-11 15:45:09,322 INFO    SystemMonitor:3044 [interfaces.py:start():190] Started memory monitoring
+2023-04-11 15:45:09,334 INFO    SystemMonitor:3044 [interfaces.py:start():190] Started network monitoring
+2023-04-11 15:45:09,350 DEBUG   HandlerThread:3044 [system_info.py:probe():195] Probing system
+2023-04-11 15:45:09,351 DEBUG   HandlerThread:3044 [git.py:repo():40] git repository is invalid
+2023-04-11 15:45:09,351 DEBUG   HandlerThread:3044 [system_info.py:probe():240] Probing system done
+2023-04-11 15:45:09,351 DEBUG   HandlerThread:3044 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.16', 'heartbeatAt': '2023-04-11T07:45:09.350059', 'startedAt': '2023-04-11T07:45:07.369672', 'docker': None, 'cuda': None, 'args': ('--cfg', 'models/yolov5s.yaml', '--data', 'D:\\FileRecv\\YOLOarmor-2022final-master\\YOLOarmor-2022final-master\\data/armor.yaml', '--hyp', 'E:/YOLOwind/data/hyps/RM.wind.yaml', '--epochs', '500', '--batch-size', '8', '--img-size', '640', '--noval', '--adam', '--workers', '1', '--negative-path', 'D:/300-600/images/train'), 'state': 'running', 'program': 'E:\\YOLOwind\\train.py', 'codePath': 'train.py', 'host': 'DESKTOP-LP6CIGL', 'username': 'Lenovo', 'executable': 'E:\\anaconda\\envs\\YOLOwind\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1609.0, 'min': 0.0, 'max': 2112.0}, 'cpu_freq_per_core': [{'current': 1609.0, 'min': 0.0, 'max': 2112.0}], 'disk': {'total': 179.8857421875, 'used': 155.23497772216797}, 'gpu': 'NVIDIA GeForce MX350', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce MX350', 'memory_total': 2147483648}], 'memory': {'total': 15.834033966064453}}
+2023-04-11 15:45:09,351 INFO    HandlerThread:3044 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-11 15:45:09,352 INFO    HandlerThread:3044 [system_monitor.py:probe():214] Publishing system info
+2023-04-11 15:45:09,352 DEBUG   HandlerThread:3044 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-11 15:45:09,352 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:09,352 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:09,352 DEBUG   HandlerThread:3044 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-11 15:45:09,352 DEBUG   HandlerThread:3044 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-04-11 15:45:09,420 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\conda-environment.yaml
+2023-04-11 15:45:09,421 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\requirements.txt
+2023-04-11 15:45:09,421 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\wandb-summary.json
+2023-04-11 15:45:11,586 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:11,587 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:13,827 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:13,827 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:16,078 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:16,079 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:18,123 DEBUG   HandlerThread:3044 [system_info.py:_save_conda():86] Saving conda packages done
+2023-04-11 15:45:18,125 INFO    HandlerThread:3044 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-11 15:45:18,161 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:18,162 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-11 15:45:18,163 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:18,164 DEBUG   SenderThread:3044 [sender.py:send():375] send: files
+2023-04-11 15:45:18,164 INFO    SenderThread:3044 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-11 15:45:18,190 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-11 15:45:18,192 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: stop_status
+2023-04-11 15:45:18,370 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:18,371 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:18,541 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\conda-environment.yaml
+2023-04-11 15:45:18,543 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\wandb-metadata.json
+2023-04-11 15:45:18,635 DEBUG   SenderThread:3044 [sender.py:send():375] send: telemetry
+2023-04-11 15:45:18,636 DEBUG   SenderThread:3044 [sender.py:send():375] send: config
+2023-04-11 15:45:19,302 INFO    wandb-upload_0:3044 [upload_job.py:push():137] Uploaded file C:\Users\Lenovo\AppData\Local\Temp\tmpbntmwdoqwandb\8x5t45h9-wandb-metadata.json
+2023-04-11 15:45:19,655 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\output.log
+2023-04-11 15:45:20,399 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:20,400 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:22,425 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:22,427 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:23,228 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:24,452 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:24,454 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:26,510 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:26,511 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:28,599 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:28,600 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:28,788 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:30,671 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:30,671 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:32,772 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:32,773 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:33,211 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-11 15:45:33,213 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: stop_status
+2023-04-11 15:45:34,494 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:35,192 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:35,193 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:37,244 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:37,245 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:39,313 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:39,314 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:39,516 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:40,455 INFO    Thread-16 :3044 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230411_154507-z571r1ue\files\config.yaml
+2023-04-11 15:45:41,530 ERROR   gpu       :3044 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2023-04-11 15:45:41,581 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:41,582 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:43,601 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:43,601 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:45,012 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:45,875 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:45,876 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:47,891 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:47,891 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:48,214 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-11 15:45:48,216 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: stop_status
+2023-04-11 15:45:49,918 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:49,919 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:50,483 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:51,936 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:51,936 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:53,973 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:53,974 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:55,495 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:45:56,266 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:56,267 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:58,277 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:45:58,277 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:00,286 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:00,286 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:00,978 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:02,294 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:02,294 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:03,217 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-11 15:46:03,217 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: stop_status
+2023-04-11 15:46:04,301 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:04,301 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:06,489 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:06,604 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:06,604 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:08,639 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:08,639 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:09,334 DEBUG   SystemMonitor:3044 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-11 15:46:09,337 DEBUG   SenderThread:3044 [sender.py:send():375] send: stats
+2023-04-11 15:46:10,657 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:10,659 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:12,459 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:12,725 ERROR   gpu       :3044 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2023-04-11 15:46:12,745 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:12,745 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:14,764 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:14,765 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:16,779 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:16,780 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:17,435 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:18,236 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-11 15:46:18,237 DEBUG   SenderThread:3044 [sender.py:send_request():402] send_request: stop_status
+2023-04-11 15:46:19,069 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:19,070 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:21,128 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:21,129 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:22,511 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:25,879 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:25,880 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:27,524 DEBUG   HandlerThread:3044 [handler.py:handle_request():144] handle_request: status_report
+2023-04-11 15:46:28,117 INFO    cpu       :3044 [interfaces.py:monitor():140] Process cpu has exited.
+2023-04-11 15:46:28,118 DEBUG   SystemMonitor:3044 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-11 15:46:28,119 DEBUG   SystemMonitor:3044 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-11 15:46:28,159 DEBUG   SenderThread:3044 [sender.py:send():375] send: stats
+2023-04-11 15:46:28,175 INFO    memory    :3044 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2023-04-11 15:46:28,528 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:28,537 ERROR   gpu       :3044 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-04-11 15:46:28,612 ERROR   gpu       :3044 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2023-04-11 15:46:29,193 INFO    MainThread:3044 [internal.py:handle_exit():76] Internal process exited
