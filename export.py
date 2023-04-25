@@ -108,7 +108,6 @@ def export_onnx(model, im, file, opset, train, dynamic, simplify, prefix=colorst
         model_onnx = onnx.load(f)  # load onnx model
         onnx.checker.check_model(model_onnx)  # check onnx model
         # print(onnx.helper.printable_graph(model_onnx.graph))  # print
-
         # Simplify
         if simplify:
             try:
