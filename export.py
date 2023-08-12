@@ -88,7 +88,7 @@ def export_onnx(model, im, file, opset, train, dynamic, simplify, prefix=colorst
     try:
         check_requirements(('onnx',))
         import onnx
-
+        dynamic=False
         print(f'\n{prefix} starting export with onnx {onnx.__version__}...')
         try:
             f = file.with_suffix('.onnx')
@@ -109,6 +109,7 @@ def export_onnx(model, im, file, opset, train, dynamic, simplify, prefix=colorst
         onnx.checker.check_model(model_onnx)  # check onnx model
         # print(onnx.helper.printable_graph(model_onnx.graph))  # print
         # Simplify
+        simplify=True;
         if simplify:
             try:
                 check_requirements(('onnx-simplifier',))
@@ -282,7 +283,7 @@ def run(data=ROOT / 'data/coco128.yaml',  # 'dataset.yaml path'
         optimize=False,  # TorchScript: optimize for mobile
         int8=False,  # CoreML/TF INT8 quantization
         dynamic=False,  # ONNX/TF: dynamic axes
-        simplify=True,  # ONNX: simplify model
+        simplify=False,  # ONNX: simplify model
         opset=12,  # ONNX: opset version
         topk_per_class=100,  # TF.js NMS: topk per class to keep
         topk_all=100,  # TF.js NMS: topk for all classes to keep

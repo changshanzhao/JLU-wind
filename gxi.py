@@ -3,6 +3,39 @@ Author:zhaojunbo
 Date:2023-4-24
 """
 
+# WhiteBalance_set = 2  # 0:close 1:continues 2:once
+# Width_set = 640  # 设置分辨率宽
+# Height_set = 480  # 设置分辨率高
+# framerate_set = 80  # 设置帧率
+# # 创建设备
+# device_manager = gx.DeviceManager()  # 创建设备对象
+# dev_num, dev_info_list = device_manager.update_device_list()  # 枚举设备，即枚举所有可用的设备
+# if dev_num is 0:
+#     print("Number of enumerated devices is 0")
+#     return
+# else:
+#     print("")
+#     print("**********************************************************")
+#     print("创建设备成功，设备号为:%d" % dev_num)
+# # 通过设备序列号打开一个设备
+# cam = device_manager.open_device_by_sn(dev_info_list[0].get("sn"))
+# # 设置宽和高
+# cam.Width.set(Width_set)
+# cam.Height.set(Height_set)
+# # 设置帧率
+# cam.AcquisitionFrameRate.set(framerate_set)
+# # 设置连续采集
+# cam.AcquisitionFrameRateMode.set(gx.GxSwitchEntry.ON)
+# # 设置白平衡
+# cam.BalanceWhiteAuto.set(WhiteBalance_set)
+# w = Width_set
+# h = Height_set
+# cam.stream_on()
+# self.fps[i] = cam.CurrentAcquisitionFrameRate.get()
+# self.frames[i] = max(int(cam.GetTotalFrameCount()), 0) or float('inf')  # infinite stream fallback
+# raw_image = cam.data_stream[0].get_image()
+# rgb_image = raw_image.convert("RGB")
+# numpy_image = rgb_image.get_numpy_array()
 import gxipy as gx
 from PIL import Image
 import datetime
