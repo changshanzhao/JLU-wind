@@ -2,12 +2,13 @@ import pandas as pd
 import os
 import cv2
 src = r"C:\Users\Lenovo\Desktop\dataset-new\dataset-new"
+dst = r"C:\Users\Lenovo\Desktop\cropdata"
 f1 = os.listdir(src+'\\image407-new')
 f2 = os.listdir(src+'\\lables407-new')
 w = 2000  # 图像宽度
 h = 1500  # 图像高度
-pan_x = 100  # 设置x偏移量
-pan_y = 75   # 设置y偏移量
+pan_x = 200  # 设置x偏移量
+pan_y = 150   # 设置y偏移量
 k = 0  # 计数用的变量
 list_l = []  # 存放标签
 list_x = []  # 存放原始x
@@ -18,11 +19,11 @@ list_pointx = []  # 存放左上角点x
 list_pointy = []  # 存放左上角点y
 list_width = []  # 存放宽度
 list_height = []  # 存放高度
-list_newx = []
-list_newy = []
-list_neww = []
-list_newh = []
-
+list_newx = []   # 存放裁切图片左上角点x
+list_newy = []   # 存放裁切图片左上角点y
+list_neww = []   # 存放裁切图片宽度
+list_newh = []   # 存放裁切图片高度
+list_corp = []   # 存放裁切后的图片
 
 def get_point(x_, y_, w_, h_):
     x1 = w*x_ - 0.5*w*w_
@@ -100,5 +101,35 @@ if __name__ == '__main__':
     # cv2.imshow('windows',img_test)
     # cv2.waitKey(0)
 
+# crop_img = img[y:y+height, x:x+width]
+    for i in range(0, 407):
+        list_tc = []
+        img_tem = cv2.imread(src + '\\image407-new\\' + f1[i])
+        for j in range(0, int(len(list_x[i]))):
+            crop_img = img_tem[int(list_newy[i][j]):int(list_newy[i][j]+list_newh[i][j]), int(list_newx[i][j]):int(list_newx[i][j]+list_neww[i][j])]
+            list_tc.append(crop_img)
+        list_corp.append(list_tc)
+    for i in range(0, 407):
+        for j in range(0, int(len(list_x[i]))):
+            crop_img = list_corp[i][j]
+            cv2.imwrite(dst + '\\images\\' + str(i) + str(j) + '.bmp', crop_img)
+    x_c = 0.5
+    y_c = 0.5
+    for i in range(0, 407):
+        for j in range(0, int(len(list_x[i]))):
+            path = dst + '\\labels\\' + str(i) + str(j) + '.txt'
+            w_b = round((list_width[i][j]/list_neww[i][j]), 5)
+            h_b = round((list_height[i][j]/list_newh[i][j]), 5)
+            label = list_l[i][j]
+            with open(path, 'w') as f:
+                f.write(str(label))
+                f.write(' ')
+                f.write(str(x_c))
+                f.write(' ')
+                f.write(str(y_c))
+                f.write(' ')
+                f.write(str(w_b))
+                f.write(' ')
+                f.write(str(h_b))
 
 
