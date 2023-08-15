@@ -1,0 +1,236 @@
+2023-08-15 12:59:58,139 INFO    StreamThr :18188 [internal.py:wandb_internal():86] W&B internal server running at pid: 18188, started at: 2023-08-15 12:59:58.138875
+2023-08-15 12:59:58,143 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status
+2023-08-15 12:59:58,234 INFO    WriterThread:18188 [datastore.py:open_for_write():85] open: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\run-8zcmnal0.wandb
+2023-08-15 12:59:58,236 DEBUG   SenderThread:18188 [sender.py:send():375] send: header
+2023-08-15 12:59:58,329 DEBUG   SenderThread:18188 [sender.py:send():375] send: run
+2023-08-15 12:59:58,376 INFO    SenderThread:18188 [sender.py:_maybe_setup_resume():761] checking resume status for None/YOLOv5/8zcmnal0
+2023-08-15 12:59:59,669 INFO    SenderThread:18188 [dir_watcher.py:__init__():219] watching files in: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files
+2023-08-15 12:59:59,670 INFO    SenderThread:18188 [sender.py:_start_run_threads():1124] run started: 8zcmnal0 with start time 1692075598.143876
+2023-08-15 12:59:59,735 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: summary_record
+2023-08-15 12:59:59,736 INFO    SenderThread:18188 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-08-15 12:59:59,757 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: check_version
+2023-08-15 12:59:59,758 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: check_version
+2023-08-15 13:00:00,676 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-summary.json
+2023-08-15 13:00:00,949 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: run_start
+2023-08-15 13:00:01,005 DEBUG   HandlerThread:18188 [system_info.py:__init__():31] System info init
+2023-08-15 13:00:01,005 DEBUG   HandlerThread:18188 [system_info.py:__init__():46] System info init done
+2023-08-15 13:00:01,005 INFO    HandlerThread:18188 [system_monitor.py:start():181] Starting system monitor
+2023-08-15 13:00:01,006 INFO    SystemMonitor:18188 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-08-15 13:00:01,006 INFO    HandlerThread:18188 [system_monitor.py:probe():201] Collecting system info
+2023-08-15 13:00:01,012 INFO    SystemMonitor:18188 [interfaces.py:start():190] Started cpu monitoring
+2023-08-15 13:00:01,013 INFO    SystemMonitor:18188 [interfaces.py:start():190] Started disk monitoring
+2023-08-15 13:00:01,015 INFO    SystemMonitor:18188 [interfaces.py:start():190] Started gpu monitoring
+2023-08-15 13:00:01,024 INFO    SystemMonitor:18188 [interfaces.py:start():190] Started memory monitoring
+2023-08-15 13:00:01,052 DEBUG   HandlerThread:18188 [system_info.py:probe():195] Probing system
+2023-08-15 13:00:01,069 INFO    SystemMonitor:18188 [interfaces.py:start():190] Started network monitoring
+2023-08-15 13:00:01,073 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:01,073 DEBUG   HandlerThread:18188 [system_info.py:_probe_git():180] Probing git
+2023-08-15 13:00:01,074 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:01,249 DEBUG   HandlerThread:18188 [system_info.py:_probe_git():188] Probing git done
+2023-08-15 13:00:01,249 DEBUG   HandlerThread:18188 [system_info.py:probe():240] Probing system done
+2023-08-15 13:00:01,249 DEBUG   HandlerThread:18188 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.16', 'heartbeatAt': '2023-08-15T05:00:01.069752', 'startedAt': '2023-08-15T04:59:58.103807', 'docker': None, 'cuda': None, 'args': ('--cfg', 'models/yolov5n.yaml', '--data', 'E:/YOLOwind/wind-data/wind.yaml', '--hyp', 'E:/YOLOwind/data/hyps/RM.wind.yaml', '--epochs', '1000', '--batch-size', '16', '--img-size', '640', '--noval', '--adam', '--workers', '1', '--negative-path', 'C:/data_ar/images/train'), 'state': 'running', 'program': 'E:/YOLOwind/train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/changshanzhao/JLU-wind.git', 'commit': 'db55a78a78b8067c0272d1f37f5d81ec164d5c3f'}, 'email': 'qq2395624242@163.com', 'root': 'E:/YOLOwind', 'host': 'DESKTOP-LP6CIGL', 'username': 'Lenovo', 'executable': 'E:\\anaconda\\envs\\YOLOwind\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1609.0, 'min': 0.0, 'max': 2112.0}, 'cpu_freq_per_core': [{'current': 1609.0, 'min': 0.0, 'max': 2112.0}], 'disk': {'total': 179.8857421875, 'used': 154.52070236206055}, 'gpu': 'NVIDIA GeForce MX350', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce MX350', 'memory_total': 2147483648}], 'memory': {'total': 15.834033966064453}}
+2023-08-15 13:00:01,249 INFO    HandlerThread:18188 [system_monitor.py:probe():211] Finished collecting system info
+2023-08-15 13:00:01,250 INFO    HandlerThread:18188 [system_monitor.py:probe():214] Publishing system info
+2023-08-15 13:00:01,250 DEBUG   HandlerThread:18188 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-08-15 13:00:01,251 DEBUG   HandlerThread:18188 [system_info.py:_save_pip():67] Saving pip packages done
+2023-08-15 13:00:01,252 DEBUG   HandlerThread:18188 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-08-15 13:00:01,673 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\conda-environment.yaml
+2023-08-15 13:00:01,675 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\requirements.txt
+2023-08-15 13:00:03,128 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:03,128 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:05,168 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:05,168 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:07,212 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:07,213 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:09,362 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:09,363 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:11,382 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:11,383 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:13,397 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:13,398 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:15,413 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:15,413 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:15,511 DEBUG   HandlerThread:18188 [system_info.py:_save_conda():86] Saving conda packages done
+2023-08-15 13:00:15,514 INFO    HandlerThread:18188 [system_monitor.py:probe():216] Finished publishing system info
+2023-08-15 13:00:15,551 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:15,551 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: keepalive
+2023-08-15 13:00:15,551 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:15,552 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: keepalive
+2023-08-15 13:00:15,553 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:15,555 DEBUG   SenderThread:18188 [sender.py:send():375] send: files
+2023-08-15 13:00:15,556 INFO    SenderThread:18188 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-08-15 13:00:15,580 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: stop_status
+2023-08-15 13:00:15,582 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: stop_status
+2023-08-15 13:00:15,703 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\conda-environment.yaml
+2023-08-15 13:00:15,705 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-metadata.json
+2023-08-15 13:00:16,108 DEBUG   SenderThread:18188 [sender.py:send():375] send: telemetry
+2023-08-15 13:00:16,109 DEBUG   SenderThread:18188 [sender.py:send():375] send: config
+2023-08-15 13:00:16,423 INFO    wandb-upload_0:18188 [upload_job.py:push():137] Uploaded file C:\Users\Lenovo\AppData\Local\Temp\tmpn527u69swandb\zvogbonv-wandb-metadata.json
+2023-08-15 13:00:16,732 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_created():278] file/dir created: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\output.log
+2023-08-15 13:00:17,431 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:17,431 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:19,476 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:19,477 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:19,704 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:21,531 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:21,532 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:23,596 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:23,596 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:24,710 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:25,657 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:25,658 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:27,700 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:27,701 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:29,730 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:29,753 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:29,754 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:30,585 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: stop_status
+2023-08-15 13:00:30,586 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: stop_status
+2023-08-15 13:00:30,763 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\config.yaml
+2023-08-15 13:00:32,059 ERROR   gpu       :18188 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2023-08-15 13:00:32,076 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:32,077 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:34,093 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:34,094 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:35,897 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:36,110 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:36,110 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:38,125 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:38,126 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:40,140 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:40,140 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:40,912 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:42,399 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:42,399 ERROR   gpu       :18188 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-08-15 13:00:43,754 DEBUG   SenderThread:18188 [sender.py:send():375] send: exit
+2023-08-15 13:00:43,754 INFO    SenderThread:18188 [sender.py:send_exit():598] handling exit code: 0
+2023-08-15 13:00:43,754 INFO    SenderThread:18188 [sender.py:send_exit():600] handling runtime: 42
+2023-08-15 13:00:43,759 INFO    SenderThread:18188 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-08-15 13:00:43,760 INFO    SenderThread:18188 [sender.py:send_exit():606] send defer
+2023-08-15 13:00:43,760 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,760 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 0
+2023-08-15 13:00:43,762 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,762 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-08-15 13:00:43,762 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 1
+2023-08-15 13:00:43,762 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,762 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 1
+2023-08-15 13:00:43,763 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,763 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-08-15 13:00:43,763 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 2
+2023-08-15 13:00:43,763 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,764 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 2
+2023-08-15 13:00:43,764 INFO    HandlerThread:18188 [system_monitor.py:finish():190] Stopping system monitor
+2023-08-15 13:00:43,764 INFO    HandlerThread:18188 [interfaces.py:finish():202] Joined cpu monitor
+2023-08-15 13:00:43,765 DEBUG   SystemMonitor:18188 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-08-15 13:00:43,765 INFO    HandlerThread:18188 [interfaces.py:finish():202] Joined disk monitor
+2023-08-15 13:00:43,772 DEBUG   SystemMonitor:18188 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-08-15 13:00:43,773 DEBUG   SystemMonitor:18188 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-08-15 13:00:43,795 ERROR   gpu       :18188 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2023-08-15 13:00:43,796 INFO    HandlerThread:18188 [interfaces.py:finish():202] Joined gpu monitor
+2023-08-15 13:00:43,796 INFO    HandlerThread:18188 [interfaces.py:finish():202] Joined memory monitor
+2023-08-15 13:00:43,797 INFO    HandlerThread:18188 [interfaces.py:finish():202] Joined network monitor
+2023-08-15 13:00:43,798 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,798 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-08-15 13:00:43,798 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 3
+2023-08-15 13:00:43,798 DEBUG   SenderThread:18188 [sender.py:send():375] send: stats
+2023-08-15 13:00:43,799 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,799 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 3
+2023-08-15 13:00:43,800 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,800 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-08-15 13:00:43,800 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 4
+2023-08-15 13:00:43,800 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,800 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 4
+2023-08-15 13:00:43,801 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,801 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-08-15 13:00:43,801 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 5
+2023-08-15 13:00:43,801 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,801 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 5
+2023-08-15 13:00:43,802 DEBUG   SenderThread:18188 [sender.py:send():375] send: summary
+2023-08-15 13:00:43,803 INFO    SenderThread:18188 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-08-15 13:00:43,803 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,803 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-08-15 13:00:43,804 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 6
+2023-08-15 13:00:43,804 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,804 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 6
+2023-08-15 13:00:43,804 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,805 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-08-15 13:00:43,805 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 7
+2023-08-15 13:00:43,805 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: status_report
+2023-08-15 13:00:43,805 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:43,806 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 7
+2023-08-15 13:00:43,806 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:43,806 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-08-15 13:00:43,807 WARNING OutRawWr-stderr:18188 [sender.py:_output_raw_writer_thread():1215] Terminal output too large. Logging without processing.
+2023-08-15 13:00:43,968 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-summary.json
+2023-08-15 13:00:44,215 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 8
+2023-08-15 13:00:44,215 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:44,216 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 8
+2023-08-15 13:00:44,216 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:44,216 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-08-15 13:00:44,247 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 9
+2023-08-15 13:00:44,247 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:44,248 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 9
+2023-08-15 13:00:44,248 DEBUG   SenderThread:18188 [sender.py:send():375] send: artifact
+2023-08-15 13:00:44,745 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: poll_exit
+2023-08-15 13:00:44,970 INFO    Thread-20 :18188 [dir_watcher.py:_on_file_modified():295] file/dir modified: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\output.log
+2023-08-15 13:00:45,660 INFO    SenderThread:18188 [sender.py:send_artifact():1474] sent artifact job-https___github.com_changshanzhao_JLU-wind.git_train.py - {'id': 'QXJ0aWZhY3Q6NTQyMDQyNDky', 'digest': '4440efdcfceb0d779c8b577df6a4b884', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-https___github.com_changshanzhao_JLU-wind.git_train.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-https___github.com_changshanzhao_JLU-wind.git_train.py', 'alias': 'v0'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjkwNTMzMzQ4', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NTQyMDQyNDky', 'versionIndex': 0}}, 'version': 'v0'}
+2023-08-15 13:00:45,660 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:45,660 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-08-15 13:00:45,660 INFO    SenderThread:18188 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-08-15 13:00:45,973 INFO    SenderThread:18188 [dir_watcher.py:finish():395] scan: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files
+2023-08-15 13:00:45,973 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\config.yaml config.yaml
+2023-08-15 13:00:45,973 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-summary.json wandb-summary.json
+2023-08-15 13:00:45,982 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\requirements.txt requirements.txt
+2023-08-15 13:00:45,989 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\conda-environment.yaml conda-environment.yaml
+2023-08-15 13:00:46,002 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-metadata.json wandb-metadata.json
+2023-08-15 13:00:46,002 INFO    SenderThread:18188 [dir_watcher.py:finish():409] scan save: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\output.log output.log
+2023-08-15 13:00:46,011 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 10
+2023-08-15 13:00:46,011 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: poll_exit
+2023-08-15 13:00:46,013 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:46,014 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 10
+2023-08-15 13:00:46,020 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:46,020 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-08-15 13:00:46,020 INFO    SenderThread:18188 [file_pusher.py:finish():168] shutting down file pusher
+2023-08-15 13:00:46,873 INFO    wandb-upload_0:18188 [upload_job.py:push():137] Uploaded file E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\config.yaml
+2023-08-15 13:00:46,982 INFO    wandb-upload_1:18188 [upload_job.py:push():137] Uploaded file E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\wandb-summary.json
+2023-08-15 13:00:46,995 INFO    wandb-upload_3:18188 [upload_job.py:push():137] Uploaded file E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\conda-environment.yaml
+2023-08-15 13:00:47,044 INFO    wandb-upload_2:18188 [upload_job.py:push():137] Uploaded file E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\requirements.txt
+2023-08-15 13:00:48,368 INFO    wandb-upload_4:18188 [upload_job.py:push():137] Uploaded file E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\files\output.log
+2023-08-15 13:00:48,570 INFO    Thread-19 :18188 [sender.py:transition_state():626] send defer: 11
+2023-08-15 13:00:48,570 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:48,570 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 11
+2023-08-15 13:00:48,571 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:48,571 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-08-15 13:00:48,572 INFO    SenderThread:18188 [file_pusher.py:join():173] waiting for file pusher
+2023-08-15 13:00:48,572 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 12
+2023-08-15 13:00:48,572 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:48,572 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 12
+2023-08-15 13:00:48,573 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:48,573 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-08-15 13:00:48,900 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 13
+2023-08-15 13:00:48,901 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:48,901 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 13
+2023-08-15 13:00:48,901 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:48,901 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-08-15 13:00:48,902 INFO    SenderThread:18188 [sender.py:transition_state():626] send defer: 14
+2023-08-15 13:00:48,902 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: defer
+2023-08-15 13:00:48,902 INFO    HandlerThread:18188 [handler.py:handle_request_defer():170] handle defer: 14
+2023-08-15 13:00:48,903 DEBUG   SenderThread:18188 [sender.py:send():375] send: final
+2023-08-15 13:00:48,903 DEBUG   SenderThread:18188 [sender.py:send():375] send: footer
+2023-08-15 13:00:48,903 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: defer
+2023-08-15 13:00:48,903 INFO    SenderThread:18188 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-08-15 13:00:48,904 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: poll_exit
+2023-08-15 13:00:48,905 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: server_info
+2023-08-15 13:00:48,905 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: get_summary
+2023-08-15 13:00:48,905 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: poll_exit
+2023-08-15 13:00:48,905 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: sampled_history
+2023-08-15 13:00:48,906 DEBUG   SenderThread:18188 [sender.py:send_request():402] send_request: server_info
+2023-08-15 13:00:49,169 INFO    MainThread:18188 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-08-15 13:00:49,169 INFO    MainThread:18188 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-08-15 13:00:49,169 INFO    MainThread:18188 [wandb_run.py:_footer_sync_info():3434] logging synced files
+2023-08-15 13:00:49,170 DEBUG   HandlerThread:18188 [handler.py:handle_request():144] handle_request: shutdown
+2023-08-15 13:00:49,170 INFO    HandlerThread:18188 [handler.py:finish():845] shutting down handler
+2023-08-15 13:00:49,905 INFO    WriterThread:18188 [datastore.py:close():298] close: E:\YOLOwind\wandb\run-20230815_125958-8zcmnal0\run-8zcmnal0.wandb
+2023-08-15 13:00:50,170 INFO    SenderThread:18188 [sender.py:finish():1550] shutting down sender
+2023-08-15 13:00:50,170 INFO    SenderThread:18188 [file_pusher.py:finish():168] shutting down file pusher
+2023-08-15 13:00:50,170 INFO    SenderThread:18188 [file_pusher.py:join():173] waiting for file pusher

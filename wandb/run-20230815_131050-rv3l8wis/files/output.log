@@ -1,0 +1,90 @@
+Overriding model.yaml nc=80 with nc=5
+                 from  n    params  module                                  arguments
+  0                -1  1      1760  models.common.Conv                      [3, 16, 6, 2, 2]
+  1                -1  1      4672  models.common.Conv                      [16, 32, 3, 2]
+  2                -1  1      4800  models.common.C3                        [32, 32, 1]
+  3                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  4                -1  2     29184  models.common.C3                        [64, 64, 2]
+  5                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  6                -1  3    156928  models.common.C3                        [128, 128, 3]
+  7                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  8                -1  1    296448  models.common.C3                        [256, 256, 1]
+  9                -1  1    164608  models.common.SPPF                      [256, 256, 5]
+ 10                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 14                -1  1      8320  models.common.Conv                      [128, 64, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     22912  models.common.C3                        [128, 64, 1, False]
+ 18                -1  1     36992  models.common.Conv                      [64, 64, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1     74496  models.common.C3                        [128, 128, 1, False]
+ 21                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 24      [17, 20, 23]  1     21648  models.yolo.Detect                      [5, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [64, 128, 256], 5, 2, 3]
+E:\anaconda\envs\YOLOwind\lib\site-packages\torch\functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:3484.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Model Summary: 270 layers, 1778800 parameters, 1778800 gradients, 4.3 GFLOPs
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m Adam with parameter groups 57 weight, 60 weight (no decay), 60 bias
+
+
+
+
+
+
+
+
+
+[34m[1mtrain: [39m[22mScanning 'E:\YOLOwind\wind-data\labels\train' images and labels...4648 found, 0 missing, 0 empty, 4648 corrupted: 100%|██████████| 4648/4648 [00:58<00:00, 79.18it/s]
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_53_13_197.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_53_41_183.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_53_48_318.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_53_50_973.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_53_55_634.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_0_23.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_12_502.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_35_423.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_38_557.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_3_185.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_43_354.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_48_235.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_59_434.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_54_8_412.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_56_16_701.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_56_24_371.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_56_40_477.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_56_6_60.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_57_17_681.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_57_21_161.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_57_2_747.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_57_35_29.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_16_57_39_871.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_14_796.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_22_209.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_2_960.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_46_63.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_52_854.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_10_58_501.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_27_901.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_30_833.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_32_396.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_33_629.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_34_838.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_36_84.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_37_245.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_39_555.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_41_17.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_46_332.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_49_299.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_50_796.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_52_33.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_53_384.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_58_333.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_59_803.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_5_99.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_11_9_303.jpg: labels require 5 columns each
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label E:\YOLOwind\wind-data\images\train\2023_4_8_17_12_17_608.jpg: labels require 5 columns each

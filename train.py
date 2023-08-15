@@ -350,7 +350,7 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
                 if RANK != -1:
                     loss *= WORLD_SIZE  # gradient averaged between devices in DDP mode
                 if opt.quad:
-                    loss *= 4.
+                    loss *= 5.
 
             # Backward
             scaler.scale(loss).backward()
