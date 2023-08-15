@@ -37,7 +37,7 @@ class Detect(nn.Module):
     stride = None  # strides computed during build
     onnx_dynamic = False  # ONNX export parameter
 
-    def __init__(self, nc=36, anchors=(), ch=(), np=4, colors=4, tags=9, inplace=True):  # detection layer
+    def __init__(self, nc=6, anchors=(), ch=(), np=5, colors=2, tags=3, inplace=True):  # detection layer
         super().__init__()
         self.nc = colors + tags  # number of classes
         self.no = self.nc + np * 2 + 1  # number of outputs per anchor
@@ -91,7 +91,7 @@ class Detect(nn.Module):
         return grid, anchor_grid
 
 class Model(nn.Module):
-    def __init__(self, cfg='yolov5s.yaml', ch=3, nc=None, anchors=None, colors=4, tags=9, numpoints=4):  # model, input channels, number of classes
+    def __init__(self, cfg='yolov5n.yaml', ch=3, nc=6, anchors=None, colors=2, tags=3, numpoints=5):  # model, input channels, number of classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
