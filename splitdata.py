@@ -4,8 +4,8 @@ import random
 import shutil
 
 def moveFile(val_img_Dir, val_mask_Dir):
-        iamge_src_dir = r"D:\JLU-wind-yolov8\wind-data\images"
-        label_src_dir = r"D:\JLU-wind-yolov8\wind-data\labels"
+        iamge_src_dir = r"E:\YOLOwind\wind-data\images"
+        label_src_dir = r"E:\YOLOwind\wind-data\labels"
         img_pathDir = os.listdir(iamge_src_dir)                    # 提取图片的原始路径
         img_pathDir.remove('train')
         img_pathDir.remove('val')
@@ -29,11 +29,11 @@ def moveFile(val_img_Dir, val_mask_Dir):
 
 if __name__ == '__main__':
     # train 目录
-    train_img_Dir = r"D:\JLU-wind-yolov8\wind-data\images\train"
-    train_mask_Dir = r"D:\JLU-wind-yolov8\wind-data\labels\train"
+    train_img_Dir = r"E:\YOLOwind\wind-data\images\train"
+    train_mask_Dir = r"E:\YOLOwind\wind-data\labels\train"
     # val路径：图片和标注文目录
-    val_img_Dir = r"D:\JLU-wind-yolov8\wind-data\images\val"
-    val_mask_Dir = r"D:\JLU-wind-yolov8\wind-data\labels\val"
+    val_img_Dir = r"E:\YOLOwind\wind-data\images\val"
+    val_mask_Dir = r"E:\YOLOwind\wind-data\labels\val"
     # 运行划分数据集函数,把一部分移动到val里面
     moveFile(val_img_Dir, val_mask_Dir)
     # 最后自己手动把剩下的拷贝到train文件夹里吧，懒得写了，后续或许更新
