@@ -194,25 +194,25 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         # pred = non_max_suppression(pred, conf_thres, iou_thres, classes, agnostic_nms, max_det=max_det)
         pred = []
         for p in pred_raw:
-            mask = p[..., 8] > opt.conf_thres
+            mask = p[..., 10] > opt.conf_thres
             # print(torch.max(p[..., 8]).detach().cpu().item())
             p = p[mask]
             if p.shape[0] > 0:
                 # print(p[..., :8].numpy())
-                xmin = torch.min(p[..., [0, 2, 4, 6]], dim=1).values.int().numpy()
-                xmax = torch.max(p[..., [0, 2, 4, 6]], dim=1).values.int().numpy()
-                ymin = torch.min(p[..., [1, 3, 5, 7]], dim=1).values.int().numpy()
-                ymax = torch.max(p[..., [1, 3, 5, 7]], dim=1).values.int().numpy()
+                xmin = torch.min(p[..., [0, 2, 4, 6, 8]], dim=1).values.int().numpy()
+                xmax = torch.max(p[..., [0, 2, 4, 6, 8]], dim=1).values.int().numpy()
+                ymin = torch.min(p[..., [1, 3, 5, 7, 9]], dim=1).values.int().numpy()
+                ymax = torch.max(p[..., [1, 3, 5, 7, 9]], dim=1).values.int().numpy()
                 bbox = [[int(x1), int(y1), int(x2 - x1), int(y2 - y1)] for x1, x2, y1, y2 in
                         zip(xmin, xmax, ymin, ymax)]
-                conf = [float(c) for c in p[..., 8].numpy()]
+                conf = [float(c) for c in p[..., 10].numpy()]
                 cls_color = torch.argmax(p[..., 9:11], dim=-1).numpy()
                 cls_number = torch.argmax(p[..., 11:14], dim=-1).numpy()
                 cls = cls_color * 3 + cls_number
                 ids = cv2.dnn.NMSBoxes(bbox, conf, opt.conf_thres, opt.iou_thres)
                 p = torch.stack([
                     torch.cat([
-                        torch.tensor(p[i, :8]).float(), torch.tensor([conf[i]]).float(), torch.tensor([cls[i]]).float()
+                        torch.tensor(p[i, :10]).float(), torch.tensor([conf[i]]).float(), torch.tensor([cls[i]]).float()
                     ], dim=0)
                     for i in ids.reshape(ids.shape[0])
                 ], dim=0)
@@ -240,7 +240,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             if len(det):
                 # Rescale boxes from img_size to im0 size
-                det[:, :8] = scale_coords(img.shape[2:], det[:, :8], im0.shape).round()
+                det[:, :10] = scale_coords(img.shape[2:], det[:, :10], im0.shape).round()
 
                 # Print results
                 for c in det[:, -1].unique():
@@ -252,10 +252,12 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                     pt1 = (int(d[2]), int(d[3]))
                     pt2 = (int(d[4]), int(d[5]))
                     pt3 = (int(d[6]), int(d[7]))
+                    pt4 = (int(d[8]), int(d[9]))
                     cv2.line(im0, pt0, pt1, (0, 255, 0), 2)
                     cv2.line(im0, pt1, pt2, (0, 255, 0), 2)
                     cv2.line(im0, pt2, pt3, (0, 255, 0), 2)
-                    cv2.line(im0, pt3, pt0, (0, 255, 0), 2)
+                    cv2.line(im0, pt3, pt4, (0, 255, 0), 2)
+                    cv2.line(im0, pt4, pt0, (0, 255, 0), 2)
                     cv2.putText(im0, names[int(d[-1])], pt0, 1, 1, (0, 255, 0))
                     cv2.putText(im0, f"{torch.sigmoid(d[8]).item():.2f}", pt3, 1, 1, (0, 255, 0))
                     cv2.putText(im0, names[int(d[-1])], (pt1[0],pt1[1]+15), 1, 1, (0, 255, 0))

@@ -196,19 +196,19 @@ def plot_images(images, targets, paths=None, fname='images.jpg', names=None, max
         blank[block_y:block_y + h, block_x:block_x + w, :] = img
         if len(targets) > 0:
             image_targets = targets[targets[:, 0] == i]
-            pts = image_targets[:, 2:10].T
+            pts = image_targets[:, 2:12].T
             classes = image_targets[:, 1].astype('int')
             labels = image_targets.shape[1] == 10  # labels if no conf column
             conf = None if labels else image_targets[:, 6]  # check for confidence presence (label vs pred)
 
             if pts.shape[1]:
                 if labels:  # if normalized with tolerance 0.01
-                    pts[[0, 2, 4, 6]] *= w  # scale to pixels
-                    pts[[1, 3, 5, 7]] *= h
+                    pts[[0, 2, 4, 6, 8]] *= w  # scale to pixels
+                    pts[[1, 3, 5, 7, 9]] *= h
                 elif scale_factor < 1:  # absolute coords need scale if image scales
                     pts *= scale_factor
-            pts[[0, 2, 4, 6]] += block_x
-            pts[[1, 3, 5, 7]] += block_y
+            pts[[0, 2, 4, 6, 8]] += block_x
+            pts[[1, 3, 5, 7, 9]] += block_y
             for j, pt in enumerate(pts.T):
                 cls = int(classes[j])
                 color = colors[cls % len(colors)]
@@ -239,12 +239,13 @@ def plot_one_box(x, img, color=None, label=None, line_thickness=3):
     # Plots one bounding box on image img
     tl = line_thickness or round(0.002 * (img.shape[0] + img.shape[1]) / 2) + 1  # line/font thickness
     color = color or [random.randint(0, 255) for _ in range(3)]
-    c1, c2, c3, c4 = (int(x[0]), int(x[1])), (int(x[2]), int(x[3])), (int(x[4]), int(x[5])), (int(x[6]), int(x[7]))
+    c1, c2, c3, c4, c5 = (int(x[0]), int(x[1])), (int(x[2]), int(x[3])), (int(x[4]), int(x[5])), (int(x[6]), int(x[7])), (int(x[8]), int(x[9]))
     # cv2.rectangle(img, c1, c2, color, thickness=tl, lineType=cv2.LINE_AA)
     cv2.line(img, c1, c2, color, thickness=tl, lineType=cv2.LINE_AA)
     cv2.line(img, c2, c3, color, thickness=tl, lineType=cv2.LINE_AA)
     cv2.line(img, c3, c4, color, thickness=tl, lineType=cv2.LINE_AA)
-    cv2.line(img, c4, c1, color, thickness=tl, lineType=cv2.LINE_AA)
+    cv2.line(img, c4, c5, color, thickness=tl, lineType=cv2.LINE_AA)
+    cv2.line(img, c5, c1, color, thickness=tl, lineType=cv2.LINE_AA)
     if label:
         tf = max(tl - 1, 1)  # font thickness
         t_size = cv2.getTextSize(label, 0, fontScale=tl / 3, thickness=tf)[0]
