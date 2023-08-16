@@ -206,8 +206,8 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                 bbox = [[int(x1), int(y1), int(x2 - x1), int(y2 - y1)] for x1, x2, y1, y2 in
                         zip(xmin, xmax, ymin, ymax)]
                 conf = [float(c) for c in p[..., 10].numpy()]
-                cls_color = torch.argmax(p[..., 9:11], dim=-1).numpy()
-                cls_number = torch.argmax(p[..., 11:14], dim=-1).numpy()
+                cls_color = torch.argmax(p[..., 11:13], dim=-1).numpy()
+                cls_number = torch.argmax(p[..., 13:16], dim=-1).numpy()
                 cls = cls_color * 3 + cls_number
                 ids = cv2.dnn.NMSBoxes(bbox, conf, opt.conf_thres, opt.iou_thres)
                 p = torch.stack([

@@ -574,8 +574,8 @@ class LoadImagesAndLabels(Dataset):
 
             labels = self.labels[index].copy()
             if labels.size:  # normalized xywh to pixel xyxy format
-                labels[:, [2, 4, 6, 8]] *= img.shape[0]  # unnormalized height 0-1
-                labels[:, [1, 3, 5, 7]] *= img.shape[1]  # unnormalized width 0-1
+                labels[:, [2, 4, 6, 8, 10]] *= img.shape[0]  # unnormalized height 0-1
+                labels[:, [1, 3, 5, 7, 9]] *= img.shape[1]  # unnormalized width 0-1
             imgs = h if h > w else w
             bk = np.full((imgs, imgs, img.shape[2]), 114, dtype=np.uint8)
             bk[:img.shape[0], :img.shape[1]] = img
@@ -589,8 +589,8 @@ class LoadImagesAndLabels(Dataset):
                                                  shear=self.hyp['shear'],
                                                  perspective=self.hyp['perspective'])
         if len(labels):
-            cx = np.mean(labels[:, [1, 3, 5, 7]], axis=1)
-            cy = np.mean(labels[:, [2, 4, 6, 8]], axis=1)
+            cx = np.mean(labels[:, [1, 3, 5, 7, 9]], axis=1)
+            cy = np.mean(labels[:, [2, 4, 6, 8, 10]], axis=1)
             i = (0 <= cx) & (cx <= img.shape[1]) & (0 <= cy) & (cy <= img.shape[0])
             labels = labels[i]
         '''
@@ -625,7 +625,8 @@ class LoadImagesAndLabels(Dataset):
             AB = labels[:, [3, 4]] - labels[:, [1, 2]]  # 2-1
             BC = labels[:, [5, 6]] - labels[:, [3, 4]]  # 3-2
             DC = labels[:, [5, 6]] - labels[:, [7, 8]]  # 3-4
-            AD = labels[:, [7, 8]] - labels[:, [1, 2]]  # 4-1
+            DE = labels[:, [7, 8]] - labels[:, [1, 2]]  # 4-1
+
             for i in range(labels.shape[0]):
                 edge_plus = [0.3 * abs(random.random() + random.random() - 1) + 0.05,
                              0.3 * abs(random.random() + random.random() - 1) + 0.5]

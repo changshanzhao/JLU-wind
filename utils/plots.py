@@ -198,7 +198,7 @@ def plot_images(images, targets, paths=None, fname='images.jpg', names=None, max
             image_targets = targets[targets[:, 0] == i]
             pts = image_targets[:, 2:12].T
             classes = image_targets[:, 1].astype('int')
-            labels = image_targets.shape[1] == 10  # labels if no conf column
+            labels = image_targets.shape[1] == 12  # labels if no conf column
             conf = None if labels else image_targets[:, 6]  # check for confidence presence (label vs pred)
 
             if pts.shape[1]:
