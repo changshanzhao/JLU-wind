@@ -31,7 +31,7 @@ perspective: 0.0003  # image perspective (+/- fraction), range 0-0.001
 flipud: 0.0  # image flip up-down (probability)
 fliplr: 0.0  # image flip left-right (probability)
 mosaic: 0.4  # image mosaic (probability)
-background_erase: 0.0 ## image clip only armors
+background_erase: 0.0 # image clip only armors
 mixup: 0.0  # image mixup (probability)
 copy_paste: 0.0  # segment copy-paste (probability)
 

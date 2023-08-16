@@ -1,9 +1,9 @@
 weights: ''
 cfg: models/yolov5n.yaml
-data: E:/YOLOwind/wind-data/wind.yaml
-hyp: E:/YOLOwind/data/hyps/RM.wind.yaml
+data: wind-data/wind.yaml
+hyp: data/hyps/RM.wind.yaml
 epochs: 1000
-batch_size: 16
+batch_size: 64
 imgsz: 640
 rect: false
 resume: false
@@ -19,7 +19,7 @@ multi_scale: false
 single_cls: false
 adam: true
 sync_bn: false
-workers: 1
+workers: 8
 project: runs/train
 name: exp
 exist_ok: false
@@ -31,9 +31,9 @@ freeze: 0
 save_period: 100
 local_rank: -1
 negative_path:
-- C:/data_ar/images/neg
+- neg
 entity: null
 upload_dataset: false
 bbox_interval: -1
 artifact_alias: latest
-save_dir: runs\train\exp
+save_dir: runs/train/exp

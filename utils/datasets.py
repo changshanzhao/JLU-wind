@@ -652,10 +652,10 @@ class LoadImagesAndLabels(Dataset):
         img = mix
         # -erase background2
 
-        xmin = np.min(labels[:, [1, 3, 5, 7]], axis=1).astype(np.int32)
-        ymin = np.min(labels[:, [2, 4, 6, 8]], axis=1).astype(np.int32)
-        w = np.max(labels[:, [1, 3, 5, 7]], axis=1).astype(np.int32) - xmin
-        h = np.max(labels[:, [2, 4, 6, 8]], axis=1).astype(np.int32) - ymin
+        xmin = np.min(labels[:, [1, 3, 5, 7, 9]], axis=1).astype(np.int32)
+        ymin = np.min(labels[:, [2, 4, 6, 8, 10]], axis=1).astype(np.int32)
+        w = np.max(labels[:, [1, 3, 5, 7, 9]], axis=1).astype(np.int32) - xmin
+        h = np.max(labels[:, [2, 4, 6, 8, 10]], axis=1).astype(np.int32) - ymin
         '''
         if len(labels):
             points_num = 1
@@ -815,12 +815,12 @@ def load_mosaic(self, index):
         if i != negative_block:
             labels, segments = self.labels[index].copy(), self.segments[index].copy()
 
-            labels[:, [1, 3, 5, 7]] *= w
-            labels[:, [2, 4, 6, 8]] *= h
+            labels[:, [1, 3, 5, 7, 9]] *= w
+            labels[:, [2, 4, 6, 8, 10]] *= h
 
             if labels.size:
-                labels[:, [1, 3, 5, 7]] += padw
-                labels[:, [2, 4, 6, 8]] += padh
+                labels[:, [1, 3, 5, 7, 9]] += padw
+                labels[:, [2, 4, 6, 8, 10]] += padh
                 segments = [xyn2xy(x, w, h, padw, padh) for x in segments]
             labels4.append(labels)
             segments4.extend(segments)
@@ -832,8 +832,8 @@ def load_mosaic(self, index):
     # img4, labels4 = replicate(img4, labels4)  # replicate
 
     # Remove out of range   
-    cx = np.mean(labels4[:, [1, 3, 5, 7]], axis=1)
-    cy = np.mean(labels4[:, [2, 4, 6, 8]], axis=1)
+    cx = np.mean(labels4[:, [1, 3, 5, 7, 9]], axis=1)
+    cy = np.mean(labels4[:, [2, 4, 6, 8, 10]], axis=1)
     i = (0 <= cx) & (cx <= s * 2) & (0 <= cy) & (cy <= s * 2)
     labels4 = labels4[i]
 
