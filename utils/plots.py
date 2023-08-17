@@ -199,8 +199,11 @@ def plot_images(images, targets, paths=None, fname='images.jpg', names=None, max
             pts = image_targets[:, 2:12].T
             classes = image_targets[:, 1].astype('int')
             labels = image_targets.shape[1] == 12  # labels if no conf column
-            conf = None if labels else image_targets[:, 6]  # check for confidence presence (label vs pred)
 
+            if labels:              # check for confidence presence (label vs pred)
+                conf = None
+            else:
+                conf = image_targets[:, 6]
             if pts.shape[1]:
                 if labels:  # if normalized with tolerance 0.01
                     pts[[0, 2, 4, 6, 8]] *= w  # scale to pixels

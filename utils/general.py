@@ -561,6 +561,8 @@ def xyxyxyxyn2xyxyxyxy(x, w=640, h=640, padw=0, padh=0):
     y[:, 5] = h * x[:, 5] + padh  # y3
     y[:, 6] = w * x[:, 6] + padw  # x4
     y[:, 7] = h * x[:, 7] + padh  # y4
+    y[:, 8] = w * x[:, 8] + padw  # x4
+    y[:, 9] = h * x[:, 9] + padh  # y4
     return y
 
 def xyxy2xywhn(x, w=640, h=640, clip=False, eps=0.0):

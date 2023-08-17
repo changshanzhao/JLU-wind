@@ -37,7 +37,7 @@ class Detect(nn.Module):
     stride = None  # strides computed during build
     onnx_dynamic = False  # ONNX export parameter
 
-    def __init__(self, nc=6, anchors=(), ch=(), np=5, colors=2, tags=3, inplace=True):  # detection layer
+    def __init__(self, nc=5, anchors=(), ch=(), np=5, colors=2, tags=3, inplace=True):  # detection layer
         super().__init__()
         self.nc = colors + tags  # number of classes
         self.no = self.nc + np * 2 + 1  # number of outputs per anchor
@@ -68,9 +68,9 @@ class Detect(nn.Module):
                 if self.grid[i].shape[2:4] != x[i].shape[2:4] or self.onnx_dynamic:
                     self.grid[i], self.anchor_grid[i] = self._make_grid(nx, ny, i)
                     
-                anchor_grid = torch.cat([self.anchor_grid[i], self.anchor_grid[i], self.anchor_grid[i], self.anchor_grid[i], torch.ones(1,self.na,1,1,self.no-8).to(x[i].device)], dim=4)
-                stride = torch.tensor([*[self.stride[i]]*8,*[1.]*(self.no-8)]).to(x[i].device)
-                grid = torch.cat([self.grid[i], self.grid[i], self.grid[i], self.grid[i], torch.zeros(1,1,ny,nx,self.no-8).to(x[i].device)], dim=4)
+                anchor_grid = torch.cat([self.anchor_grid[i], self.anchor_grid[i], self.anchor_grid[i], self.anchor_grid[i],self.anchor_grid[i], torch.ones(1,self.na,1,1,self.no-10).to(x[i].device)], dim=4)
+                stride = torch.tensor([*[self.stride[i]]*10,*[1.]*(self.no-10)]).to(x[i].device)
+                grid = torch.cat([self.grid[i], self.grid[i], self.grid[i], self.grid[i], self.grid[i], torch.zeros(1,1,ny,nx,self.no-10).to(x[i].device)], dim=4)
 
                 if self.training:
                     x[i] = x[i] * anchor_grid / stride + grid
@@ -91,7 +91,7 @@ class Detect(nn.Module):
         return grid, anchor_grid
 
 class Model(nn.Module):
-    def __init__(self, cfg='yolov5n.yaml', ch=3, nc=6, anchors=None, colors=2, tags=3, numpoints=5):  # model, input channels, number of classes
+    def __init__(self, cfg='yolov5n.yaml', ch=3, nc=5, anchors=None, colors=2, tags=3, numpoints=5):  # model, input channels, number of classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
