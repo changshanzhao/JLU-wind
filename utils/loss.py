@@ -184,8 +184,8 @@ class ComputeLoss:
                 lbox += (1.0 - iou).mean()  # iou loss
 
                 # Points Regression
-                l1 = self.smoothL1(ppts, tpts[i])
-                # l1 = self.landmarks_loss(ppts, tpts[i], torch.full_like(ppts, self.cp, device=device))/10
+                # l1 = self.smoothL1(ppts, tpts[i])
+                l1 = self.landmarks_loss(ppts, tpts[i], torch.full_like(ppts, self.cp, device=device))/10
                 lpts += l1
 
                 # Objectness
