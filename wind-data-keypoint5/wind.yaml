@@ -1,4 +1,4 @@
-    path: E:/YOLOwind/wind-data
+    path: ./wind-data-keypoint5
     train: images/train    #图片路径
     val: images/val      #图片路径
     nc: 6                                                            #class种类数
